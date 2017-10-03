@@ -65,6 +65,7 @@ Contributors
 
 * Antonio Esposito <a.esposito@onestein.nl> (http://www.onestein.eu)
 * Alex Comba <alex.comba@agilebg.com> (https://www.agilebg.com/)
+* Nicola Malcontenti <nicola.malcontenti@agilebg.com> (https://www.agilebg.com/)
 
 Do not contact contributors directly about support or help with technical issues.
 

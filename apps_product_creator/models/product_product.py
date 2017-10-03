@@ -16,7 +16,7 @@ class ProductProduct(models.Model):
             attribute = self.env['product.attribute.value'].browse(
                 values['attribute_value_ids'][0][2]).filtered(
                 lambda x: x.attribute_id == self.env.ref(
-                    'github_product_creator.attribute_odoo_version'))
+                    'apps_product_creator.attribute_odoo_version'))
 
             if attribute:
                 version = template.odoo_module_id.module_version_ids.filtered(

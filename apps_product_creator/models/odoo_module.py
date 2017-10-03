@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2017 Onestein (<http://www.onestein.eu>)
 # Copyright 2017 Alex Comba - Agile Business Group
+# Copyright 2017 Nicola Malcontenti - Agile Business Group
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import models, fields, api
@@ -46,7 +47,7 @@ class OdooModule(models.Model):
             'name': self.name,
             'attribute_line_ids': [(0, 0, {
                 'attribute_id': self.env.ref(
-                    'github_product_creator.attribute_odoo_version').id,
+                    'apps_product_creator.attribute_odoo_version').id,
                 'value_ids': [(6, 0, value_ids)],
             })]
         }
@@ -54,6 +55,7 @@ class OdooModule(models.Model):
 
     @api.model
     def cron_create_product(self):
-        modules = self.search(['product_template_id', '=', False])
+        modules = self.search([('product_template_id', '=', False),
+                               ('module_version_qty', '!=', 0)])
         modules.action_create_product()
         return True
